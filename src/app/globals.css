@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-black-matte: #0A0A0A;
+  --color-charcoal: #111111;
+  --color-red-deep: #8B0000;
+  --color-red-bright: #cc0000;
+  --color-off-white: #F5F5F5;
+  --color-silver: #C0C0C0;
+  --color-cyan-glow: #00FFFF;
+  --color-stadium-warm: #FFA500;
+  
+  --font-oswald: "Oswald", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-black-matte text-off-white font-inter overflow-x-hidden;
+    cursor: default;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-oswald uppercase font-bold tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B0000;
+}
+
+/* Noise texture */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  z-index: 50;
+}
+
+/* Custom Cursor styles */
+.cursor-dot {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-cyan-glow);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s;
+}
+
+.cursor-outline {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+.hover-target:hover ~ .cursor-dot {
+  width: 0;
+  height: 0;
+}
+.hover-target:hover ~ .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: var(--color-red-deep);
+  background: rgba(139, 0, 0, 0.1);
+}
+
+/* Utilities */
+.text-stroke {
+  -webkit-text-stroke: 1px var(--color-off-white);
+  color: transparent;
+}
+.text-stroke-red {
+  -webkit-text-stroke: 1px var(--color-red-deep);
+  color: transparent;
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.clip-path-card {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
