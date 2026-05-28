@@ -85,7 +85,7 @@ export const playersData = [
     style: "RHB",
     stats: "Win %: 75",
     aura: "Chaos Architect",
-    number: "08"
+    number: "29"
   },
 ];
 
