@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Camera } from "lucide-react";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,6 +14,13 @@ export default function HeroSection() {
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section 
@@ -97,15 +104,21 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
             style={{ y: y2 }}
           >
-            <button className="hover-target group relative px-8 py-5 bg-[var(--color-red-deep)] text-white font-oswald uppercase tracking-wider text-xl font-bold overflow-hidden clip-path-slant flex items-center justify-center gap-3">
+            <button 
+              onClick={() => scrollToSection('team-section')}
+              className="hover-target group relative px-8 py-5 bg-[var(--color-red-deep)] text-white font-oswald uppercase tracking-wider text-xl font-bold overflow-hidden clip-path-slant flex items-center justify-center gap-3"
+            >
               <span className="relative z-10">Meet the Squad</span>
               <ArrowRight className="w-6 h-6 relative z-10 transition-transform group-hover:translate-x-2" />
               <div className="absolute inset-0 bg-[var(--color-red-bright)] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
             </button>
             
-            <button className="hover-target group px-8 py-5 border border-[var(--color-silver)]/20 text-white font-oswald uppercase tracking-wider text-xl font-bold flex items-center justify-center gap-3 hover:bg-white/5 transition-colors clip-path-slant">
-              <Play className="w-5 h-5 fill-white" />
-              <span>Highlights</span>
+            <button 
+              onClick={() => scrollToSection('gallery-section')}
+              className="hover-target group px-8 py-5 border border-[var(--color-silver)]/20 text-white font-oswald uppercase tracking-wider text-xl font-bold flex items-center justify-center gap-3 hover:bg-white/5 transition-colors clip-path-slant"
+            >
+              <Camera className="w-5 h-5 fill-white/20 text-white" />
+              <span>View Gallery</span>
             </button>
           </motion.div>
         </div>

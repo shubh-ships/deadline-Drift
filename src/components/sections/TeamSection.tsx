@@ -178,6 +178,7 @@ export default function TeamSection() {
 
   return (
     <section
+      id="team-section"
       ref={containerRef}
       className="relative w-full min-h-screen bg-[var(--color-charcoal)] py-32 flex flex-col items-center justify-center z-20 border-t border-[rgba(255,255,255,0.05)] overflow-hidden"
     >

@@ -42,7 +42,7 @@ const galleryImages = [
 
 export default function GallerySection() {
   return (
-    <section className="relative w-full py-32 bg-[#0A0A0A] z-20">
+    <section id="gallery-section" className="relative w-full py-32 bg-[#0A0A0A] z-20">
       <div className="w-full max-w-7xl mx-auto px-4 flex flex-col">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
