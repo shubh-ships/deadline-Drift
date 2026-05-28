@@ -41,7 +41,7 @@ export const playersData = [
     id: 4,
     name: "Nikhil",
     image: "/team/nikhil.jpg",
-    role: "Clutch All-Rounder",
+    role: "Star All-Rounder",
     style: "RHB / RAM",
     stats: "Avg: 45.2",
     aura: "The Phantom",
