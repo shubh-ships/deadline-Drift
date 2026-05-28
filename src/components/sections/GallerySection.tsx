@@ -26,14 +26,14 @@ const galleryImages = [
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1624194523363-d142142e0325?q=80&w=2070&auto=format&fit=crop",
+    url: "https://media.istockphoto.com/id/125141742/photo/cricket-bowler-in-action.jpg?s=1024x1024&w=is&k=20&c=gOXzIB6QdK7Q9GKy4r7LjHJTwaP4DJdebnaDccT6J90=",
     colSpan: "col-span-12 md:col-span-6",
     rowSpan: "row-span-1",
     caption: "Pace"
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1505250469679-203ad920ce5a?q=80&w=2070&auto=format&fit=crop",
+    url: "https://plus.unsplash.com/premium_photo-1722122222077-332c43cfbed0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     colSpan: "col-span-12 md:col-span-6",
     rowSpan: "row-span-1",
     caption: "Under the Lights"
@@ -57,7 +57,7 @@ export default function GallerySection() {
             </h2>
             <div className="h-1 w-24 bg-[var(--color-red-deep)] mt-4" />
           </div>
-          
+
           <span className="text-[var(--color-silver)] text-sm font-oswald uppercase tracking-[0.2em] hidden md:block">
             Raw Footage // Est. 2022
           </span>
@@ -75,16 +75,16 @@ export default function GallerySection() {
             >
               {/* Fallback pattern in case image fails to load, gives a gritty look */}
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-10 pointer-events-none" />
-              
-              <img 
-                src={img.url} 
+
+              <img
+                src={img.url}
                 alt={img.caption}
                 className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
               />
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300 z-10" />
-              
+
               {/* Caption */}
               <div className="absolute bottom-0 left-0 p-6 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 <div className="w-8 h-[2px] bg-[var(--color-cyan-glow)] mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100" />

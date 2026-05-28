@@ -30,7 +30,7 @@ export const playersData = [
   {
     id: 3,
     name: "Ashish",
-    image: "/team/mathur.jpg",
+    image: "/team/mathur.png",
     role: "Power Hitter",
     style: "RHB",
     stats: "Avg: 45.2",
@@ -87,7 +87,88 @@ export const playersData = [
     aura: "Chaos Architect",
     number: "29"
   },
+  {
+    id: 9,
+    name: "Swetank",
+    image: "/team/swetank.jpeg",
+    role: "Top Order Batsman",
+    style: "RHB",
+    stats: "Avg: 38.2",
+    aura: "Shot Selection King",
+    number: "09"
+  },
+  {
+    id: 10,
+    name: "Amardeep",
+    image: "/team/amardeep.jpeg",
+    role: "All-Round Weapon",
+    style: "RHB / RAM",
+    stats: "Econ: 7.2",
+    aura: "The Enforcer",
+    number: "10"
+  },
+  {
+    id: 11,
+    name: "Sakshat",
+    image: "/team/sakshat.jpeg",
+    role: "Spin All-Rounder",
+    style: "RHB / Off-Spin",
+    stats: "Econ: 6.9",
+    aura: "The Controller",
+    number: "11"
+  },
+  {
+    id: 12,
+    name: "Tanmay",
+    image: "/team/tanmay.jpeg",
+    role: "Aggressive Batsman",
+    style: "LHB",
+    stats: "SR: 145.5",
+    aura: "Power Play Specialist",
+    number: "12"
+  },
+  {
+    id: 13,
+    name: "Manish",
+    image: "/team/manish.jpeg",
+    role: "Middle Order Anchor",
+    style: "RHB",
+    stats: "Avg: 42.0",
+    aura: "Cool Under Pressure",
+    number: "13"
+  },
+  {
+    id: 14,
+    name: "Ravi",
+    image: "/team/ravi.jpeg",
+    role: "Explosive Finisher",
+    style: "RHB",
+    stats: "SR: 162.8",
+    aura: "Six-Hitting Dynamo",
+    number: "14"
+  },
+  {
+    id: 15,
+    name: "Nishant",
+    image: "/team/nishant.jpeg",
+    role: "Technical Batsman",
+    style: "LHB",
+    stats: "Avg: 39.5",
+    aura: "Elegant Strokeplayer",
+    number: "15"
+  },
+  {
+    id: 16,
+    name: "Parth",
+    image: "/team/parth.jpeg",
+    role: "Batsman",
+    style: "RHB",
+    stats: "SR: 126.1",
+    aura: "Elegant Hitter",
+    number: "16"
+  }
 ];
+
 
 export default function TeamSection() {
   const containerRef = useRef<HTMLDivElement>(null);

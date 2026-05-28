@@ -51,7 +51,7 @@ export default function TheArsenalSection() {
     <section className="relative w-full min-h-[80vh] bg-[#0A0A0A] py-32 z-20 flex flex-col items-center border-t border-white/5">
       {/* Background that changes based on active tab */}
       <div className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-1000">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-10 filter grayscale transition-all duration-1000"
           style={{ backgroundImage: `url(${activeTab.bgImage})` }}
         />
@@ -60,10 +60,10 @@ export default function TheArsenalSection() {
       </div>
 
       <div className="w-full max-w-7xl mx-auto px-4 relative z-10 flex flex-col lg:flex-row gap-16">
-        
+
         {/* Left Side: Navigation */}
         <div className="w-full lg:w-1/3 flex flex-col">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,15 +76,15 @@ export default function TheArsenalSection() {
             {loadout.map((item) => {
               const Icon = item.icon;
               const isActive = activeTab.id === item.id;
-              
+
               return (
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item)}
                   className={cn(
                     "hover-target text-left flex items-center gap-4 p-4 border transition-all duration-300",
-                    isActive 
-                      ? "bg-[var(--color-red-deep)]/10 border-[var(--color-red-deep)] shadow-[inset_4px_0_0_var(--color-red-bright)]" 
+                    isActive
+                      ? "bg-[var(--color-red-deep)]/10 border-[var(--color-red-deep)] shadow-[inset_4px_0_0_var(--color-red-bright)]"
                       : "bg-[#111] border-white/5 hover:bg-white/5"
                   )}
                 >
@@ -142,7 +142,7 @@ export default function TheArsenalSection() {
                 </div>
               ))}
             </div>
-            
+
             {/* Decorative crosshairs */}
             <div className="absolute top-10 right-10 w-8 h-8 opacity-20 hidden md:block">
               <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white" />
